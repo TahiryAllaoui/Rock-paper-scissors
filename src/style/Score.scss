@@ -1,0 +1,38 @@
+.score-board {
+    border: 2px solid hsl(217, 16%, 45%);
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    height: 15%;
+    border-radius: 16px;
+    padding: 10px;
+
+    h1 {
+        margin: 0;
+        color: #f1f1f1;
+        line-height: 25px;
+    }
+}
+
+.score {
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: hsl(229, 64%, 46%);
+        margin: 0;
+        font-size: small;
+    }
+
+    p {
+        color: hsl(229, 25%, 31%);
+        font-size: 45px;
+        margin: 0;
+        font-weight: bold;
+    }
+}
