@@ -1,5 +1,6 @@
 import '../style/App.scss'
 import Game from './Game'
+import Rules from './Rules'
 import Score from './Score'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className='app'>
       <Score />
       <Game />
+      <Rules />
     </div>
   )
 }
