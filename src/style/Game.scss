@@ -5,6 +5,7 @@
     width: 50%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
@@ -15,26 +16,71 @@
         height: 50%;
 
         .paper {
-            width: 10rem;
-            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15rem;
+            height: 15rem;
             background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
             border-radius: 100%;
+            border-bottom: rgba(0, 0, 255, 0.5) 5px solid;
+
+            .inner-paper {
+                width: 11rem;
+                height: 11rem;
+                background-color: #f1f1f1;
+                background-image: url('../assets/images/icon-paper.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 100%;
+                border-top: 5px rgba(128, 128, 128, 0.5) solid;
+            }
         }
 
         .scissors {
-            width: 10rem;
-            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15rem;
+            height: 15rem;
             background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
             border-radius: 100%;
+            border-bottom: rgba(187, 121, 0, 1) 5px solid;
+
+            .inner-scissors {
+                width: 11rem;
+                height: 11rem;
+                background-color: #f1f1f1;
+                background-image: url('../assets/images/icon-scissors.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 100%;
+                border-top: 5px rgba(128, 128, 128, 0.5) solid;
+            }
         }
     }
 
     .bottom-hand {
         .rock {
-            width: 10rem;
-            height: 10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15rem;
+            height: 15rem;
             background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
             border-radius: 100%;
+            border-bottom: hsl(349, 80%, 46%) 5px solid;
+
+            .inner-rock {
+                width: 11rem;
+                height: 11rem;
+                background-color: #f1f1f1;
+                background-image: url('../assets/images/icon-rock.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                border-radius: 100%;
+                border-top: 5px rgba(128, 128, 128, 0.5) solid;
+            }
         }
     }
 }
