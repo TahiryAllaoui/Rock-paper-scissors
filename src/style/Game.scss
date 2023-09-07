@@ -1,0 +1,40 @@
+.game {
+    background-image: url('../assets/images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .top-hand {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 50%;
+
+        .paper {
+            width: 10rem;
+            height: 10rem;
+            background: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+            border-radius: 100%;
+        }
+
+        .scissors {
+            width: 10rem;
+            height: 10rem;
+            background: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+            border-radius: 100%;
+        }
+    }
+
+    .bottom-hand {
+        .rock {
+            width: 10rem;
+            height: 10rem;
+            background: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+            border-radius: 100%;
+        }
+    }
+}
