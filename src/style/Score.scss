@@ -2,37 +2,52 @@
     border: 2px solid hsl(217, 16%, 45%);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 50%;
     height: fit-content;
     border-radius: 16px;
     padding: 10px;
 
+    @media (max-width: 428px) {
+        width: 85%;
+    }
+
     h1 {
         margin: 0;
         color: #f1f1f1;
         line-height: 25px;
-    }
-}
 
-.score {
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    width: 15%;
-    background-color: rgb(255, 255, 255);
-    justify-content: center;
-    align-items: center;
-
-    h2 {
-        color: hsl(229, 64%, 46%);
-        margin: 0;
-        font-size: small;
+        @media (max-width: 428px) {
+            font-size: 1.5rem;
+            line-height: 20px;
+        }
     }
 
-    p {
-        color: hsl(229, 25%, 31%);
-        font-size: 45px;
-        margin: 0;
-        font-weight: bold;
+
+    .score {
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        width: 15%;
+        background-color: rgb(255, 255, 255);
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 428px) {
+            width: 25%;
+        }
+
+        h2 {
+            color: hsl(229, 64%, 46%);
+            margin: 0;
+            font-size: small;
+        }
+
+        p {
+            color: hsl(229, 25%, 31%);
+            font-size: 45px;
+            margin: 0;
+            font-weight: bold;
+        }
     }
 }

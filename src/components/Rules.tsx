@@ -19,7 +19,7 @@ const Rules = () => {
         setTimeout(() => {
             container.style.opacity = '0';
             container.style.zIndex = '-2';
-        }, 50);
+        }, 200);
     };
 
 

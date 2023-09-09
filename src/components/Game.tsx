@@ -24,21 +24,21 @@ const Game = () => {
         lose: 'paper',
         icon: rockIcon,
         bg: 'radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%))',
-        borderBottom: 'hsl(349, 80%, 46%) 10px solid'
+        borderBottom: 'hsl(349, 80%, 46%) 5px solid'
     }, {
         name: 'paper',
         beat: 'rock',
         lose: 'scissors',
         icon: paperIcon,
         bg: 'radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%))',
-        borderBottom: 'rgba(0, 0, 255, 0.5) 10px solid'
+        borderBottom: 'rgba(0, 0, 255, 0.5) 5px solid'
     }, {
         name: 'scissors',
         beat: 'paper',
         lose: 'rock',
         icon: scissorsIcon,
         bg: 'radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%))',
-        borderBottom: 'rgba(187, 121, 0, 1) 10px solid'
+        borderBottom: 'rgba(187, 121, 0, 1) 5px solid'
     }];
 
 
@@ -143,13 +143,27 @@ const Game = () => {
                 </div>
             </div> :
                 <div className="summary">
-                    <div className="user">
-                        You picked
-                        <div className='outer-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
-                            <div className='middle-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
-                                <div className='inner-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
-                                    <div className="hand" style={{ background: `${usersMove.bg}`, borderBottom: `${usersMove.borderBottom}` }}>
-                                        <div className="inner-hand" style={{ backgroundImage: `url(${usersMove.icon})` }}></div>
+                    <div className="versus">
+                        <div className="user">
+                            You picked
+                            <div className='outer-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
+                                <div className='middle-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
+                                    <div className='inner-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
+                                        <div className="hand" style={{ background: `${usersMove.bg}`, borderBottom: `${usersMove.borderBottom}` }}>
+                                            <div className="inner-hand" style={{ backgroundImage: `url(${usersMove.icon})`, borderTop: '5px solid rgba(128, 128, 128, 0.5)' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="npc">
+                            the house picked
+                            <div className='outer-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
+                                <div className='middle-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
+                                    <div className='inner-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
+                                        <div className="hand" style={{ background: `${npcsMove.bg}`, borderBottom: `${npcsMove.borderBottom}` }}>
+                                            <div className="inner-hand" style={{ backgroundImage: `url(${npcsMove.icon})`, borderTop: '5px solid rgba(128, 128, 128, 0.5)' }}></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -157,19 +171,7 @@ const Game = () => {
                     </div>
                     <div className="container">
                         <h2>{text}</h2>
-                        <div className="my-button" onClick={handleLost}>PLAY AGAIN</div>
-                    </div>
-                    <div className="npc">
-                        the house picked
-                        <div className='outer-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
-                            <div className='middle-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
-                                <div className='inner-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
-                                    <div className="hand" style={{ background: `${npcsMove.bg}`, borderBottom: `${npcsMove.borderBottom}` }}>
-                                        <div className="inner-hand" style={{ backgroundImage: `url(${npcsMove.icon})` }}></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="my-button" onClick={handleLost} style={{ color: userWins ? 'hsl(229, 25%, 31%)' : 'hsla(349, 70%, 56%, 1)' }}>PLAY AGAIN</div>
                     </div>
                 </div>
             }

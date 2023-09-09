@@ -3,10 +3,14 @@
     display: flex;
     justify-content: flex-end;
 
+    @media (max-width: 428px) {
+        justify-content: center;
+    }
+
     .my-button {
         width: 8rem;
         height: 2rem;
-        border-radius: 8px;
+        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -14,6 +18,10 @@
         border: 2px solid hsl(217, 16%, 45%);
         color: #f1f1f1;
         cursor: pointer;
+
+        @media (max-width: 428px) {
+            height: 2.8rem;
+        }
 
         &:hover {
             background-color: hsl(237, 48%, 9%);
@@ -30,7 +38,7 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.507);
         opacity: 1;
-        transition: opacity 100ms ease-out;
+        transition: opacity 200ms ease-out;
 
         .rules-container {
             background-color: #f1f1f1;

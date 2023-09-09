@@ -20,12 +20,22 @@
         opacity: 1;
         transition: opacity 200ms;
 
+        @media (max-width: 428px) {
+            background-size: 15rem;
+            width: 100%;
+        }
+
         .top-hand {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
             gap: 7rem;
+
+            @media (max-width: 428px) {
+                gap: 3.5rem;
+                width: 100%;
+            }
 
             .paper {
                 display: flex;
@@ -38,6 +48,12 @@
                 border-bottom: rgba(0, 0, 255, 0.5) 10px solid;
                 cursor: pointer;
 
+                @media (max-width: 428px) {
+                    border-bottom: rgba(0, 0, 255, 0.5) 5px solid;
+                    width: 9.5rem;
+                    height: 9rem;
+                }
+
                 .inner-paper {
                     width: 9.5rem;
                     height: 9rem;
@@ -47,6 +63,12 @@
                     background-position: center;
                     border-radius: 100%;
                     border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                    @media (max-width: 428px) {
+                        border-top: 5px rgba(128, 128, 128, 0.5) solid;
+                        width: 6.5rem;
+                        height: 6rem;
+                    }
                 }
             }
 
@@ -61,6 +83,12 @@
                 border-bottom: rgba(187, 121, 0, 1) 10px solid;
                 cursor: pointer;
 
+                @media (max-width: 428px) {
+                    border-bottom: rgba(187, 121, 0, 1) 5px solid;
+                    width: 9.5rem;
+                    height: 9rem;
+                }
+
                 .inner-scissors {
                     width: 9.5rem;
                     height: 9rem;
@@ -70,6 +98,12 @@
                     background-position: center;
                     border-radius: 100%;
                     border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                    @media (max-width: 428px) {
+                        border-top: 5px rgba(128, 128, 128, 0.5) solid;
+                        width: 6.5rem;
+                        height: 6rem;
+                    }
                 }
             }
         }
@@ -92,6 +126,12 @@
                 border-bottom: hsl(349, 80%, 46%) 10px solid;
                 cursor: pointer;
 
+                @media (max-width: 428px) {
+                    border-bottom: hsl(349, 80%, 46%) 5px solid;
+                    width: 9.5rem;
+                    height: 9rem;
+                }
+
                 .inner-rock {
                     width: 9.5rem;
                     height: 9rem;
@@ -101,13 +141,19 @@
                     background-position: center;
                     border-radius: 100%;
                     border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                    @media (max-width: 428px) {
+                        border-top: 5px rgba(128, 128, 128, 0.5) solid;
+                        width: 6.5rem;
+                        height: 6rem;
+                    }
                 }
             }
         }
     }
 
     .summary {
-        width: 75%;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: space-around;
@@ -115,123 +161,205 @@
         opacity: 0;
         transition: opacity 200ms;
 
-        .user {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #f1f1f1b2;
-            font-size: large;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: bold;
+        @media (max-width: 428px) {
+            align-items: flex-end;
+            height: 75%;
+        }
 
-            .outer-layer {
-                border-radius: 50%;
+        .versus {
+            width: 75%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            @media (max-width: 428px) {
+                width: 100%;
+            }
+
+
+            .user {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
-                width: 30rem;
-                height: 30rem;
+                align-items: center;
+                color: #f1f1f1b2;
+                font-size: large;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: bold;
 
-                .middle-layer {
+                @media (max-width: 428px) {
+                    width: 50%;
+                    font-size: small;
+                    flex-direction: column-reverse;
+                    justify-content: flex-end;
+                }
+
+                .outer-layer {
                     border-radius: 50%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    width: 25rem;
-                    height: 25rem;
+                    width: 30rem;
+                    height: 30rem;
 
-                    .inner-layer {
+                    @media (max-width: 428px) {
+                        width: 20rem;
+                        height: 20rem;
+                    }
+
+                    .middle-layer {
                         border-radius: 50%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        width: 20rem;
-                        height: 20rem;
+                        width: 25rem;
+                        height: 25rem;
 
-                        .hand {
+                        @media (max-width: 428px) {
+                            width: 17rem;
+                            height: 17rem;
+                        }
+
+                        .inner-layer {
+                            border-radius: 50%;
                             display: flex;
+                            flex-direction: column;
                             align-items: center;
                             justify-content: center;
-                            width: 15.5rem;
-                            height: 15rem;
-                            border-radius: 100%;
+                            width: 20rem;
+                            height: 20rem;
 
-                            .inner-hand {
-                                width: 11.5rem;
-                                height: 11rem;
-                                background-color: #f1f1f1;
-                                background-repeat: no-repeat;
-                                background-position: center;
+                            @media (max-width: 428px) {
+                                width: 13rem;
+                                height: 13rem;
+                            }
+
+                            .hand {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 15.5rem;
+                                height: 15rem;
                                 border-radius: 100%;
-                                border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                                @media (max-width: 428px) {
+                                    width: 9.5rem;
+                                    height: 9rem;
+                                }
+
+                                .inner-hand {
+                                    width: 11.5rem;
+                                    height: 11rem;
+                                    background-color: #f1f1f1;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    border-radius: 100%;
+                                    border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                                    @media (max-width: 428px) {
+                                        width: 6.5rem;
+                                        height: 6rem;
+                                    }
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        .npc {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #f1f1f1b2;
-            font-size: large;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-weight: bold;
-
-            .outer-layer {
-                opacity: 1;
-                transition: opacity 100ms ease-out;
-                border-radius: 50%;
+            .npc {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
-                width: 30rem;
-                height: 30rem;
+                align-items: center;
+                color: #f1f1f1b2;
+                font-size: large;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                font-weight: bold;
 
-                .middle-layer {
+                @media (max-width: 428px) {
+                    width: 50%;
+                    font-size: small;
+                    flex-direction: column-reverse;
+                    justify-content: flex-end;
+                }
+
+
+                .outer-layer {
+                    opacity: 1;
+                    transition: opacity 100ms ease-out;
                     border-radius: 50%;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    width: 25rem;
-                    height: 25rem;
+                    width: 30rem;
+                    height: 30rem;
 
-                    .inner-layer {
+                    @media (max-width: 428px) {
+                        width: 20rem;
+                        height: 20rem;
+                    }
+
+                    .middle-layer {
                         border-radius: 50%;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
-                        width: 20rem;
-                        height: 20rem;
+                        width: 25rem;
+                        height: 25rem;
 
-                        .hand {
+                        @media (max-width: 428px) {
+                            width: 17rem;
+                            height: 17rem;
+                        }
+
+                        .inner-layer {
+                            border-radius: 50%;
                             display: flex;
+                            flex-direction: column;
                             align-items: center;
                             justify-content: center;
-                            width: 15.5rem;
-                            height: 15rem;
-                            border-radius: 100%;
+                            width: 20rem;
+                            height: 20rem;
 
-                            .inner-hand {
-                                width: 11.5rem;
-                                height: 11rem;
-                                background-color: #f1f1f1;
-                                background-repeat: no-repeat;
-                                background-position: center;
+                            @media (max-width: 428px) {
+                                width: 13rem;
+                                height: 13rem;
+                            }
+
+                            .hand {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 15.5rem;
+                                height: 15rem;
                                 border-radius: 100%;
-                                border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                                @media (max-width: 428px) {
+                                    width: 9.5rem;
+                                    height: 9rem;
+                                }
+
+                                .inner-hand {
+                                    width: 11.5rem;
+                                    height: 11rem;
+                                    background-color: #f1f1f1;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    border-radius: 100%;
+                                    border-top: 10px rgba(128, 128, 128, 0.5) solid;
+
+                                    @media (max-width: 428px) {
+                                        width: 6.5rem;
+                                        height: 6rem;
+                                    }
+                                }
                             }
                         }
                     }
@@ -248,15 +376,24 @@
             height: 5rem;
             position: fixed;
 
+            @media (max-width: 428px) {
+                width: 50%;
+                height: 6rem;
+            }
+
+
             h2 {
                 margin: 0;
                 font-size: xx-large;
                 color: #f1f1f1;
                 text-transform: uppercase;
+
+                @media (max-width: 428px) {
+                    letter-spacing: 5px;
+                }
             }
 
             .my-button {
-                color: hsla(349, 70%, 56%, 1);
                 font-size: small;
                 font-weight: bold;
                 letter-spacing: 2px;
