@@ -7,6 +7,11 @@
     align-items: center;
     justify-content: center;
 
+    @media (max-width: 428px) {
+        margin: 0;
+        justify-content: flex-start;
+    }
+
     .hand-selection {
         background-repeat: no-repeat;
         background-position: center;
@@ -23,6 +28,7 @@
         @media (max-width: 428px) {
             background-size: 15rem;
             width: 100%;
+
         }
 
         .top-hand {
@@ -379,6 +385,7 @@
             @media (max-width: 428px) {
                 width: 50%;
                 height: 6rem;
+                top: 70%;
             }
 
 
@@ -389,7 +396,7 @@
                 text-transform: uppercase;
 
                 @media (max-width: 428px) {
-                    letter-spacing: 5px;
+                    letter-spacing: 2px;
                 }
             }
 
