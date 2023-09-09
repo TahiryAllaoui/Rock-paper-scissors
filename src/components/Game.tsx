@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import '../style/Game.scss';
 import triangle from '../assets/images/bg-triangle.svg';
 import rockIcon from '../assets/images/icon-rock.svg';
 import paperIcon from '../assets/images/icon-paper.svg';
 import scissorsIcon from '../assets/images/icon-scissors.svg';
+import ScoreContext from '../contexts/Score';
 
 interface moves {
     name: string;
@@ -15,6 +16,8 @@ interface moves {
 }
 
 const Game = () => {
+    let scoreContext = useContext(ScoreContext);
+
     const hand: moves[] = [{
         name: 'rock',
         beat: 'scissors',
@@ -92,11 +95,13 @@ const Game = () => {
             setText('You won');
             setNpcWins(false);
             setUserWins(true);
+            scoreContext!.setScore(scoreContext.score + 1);
         }
         if (usersMove.lose == npcsMove.name) {
             setText('You lost');
             setNpcWins(true);
             setUserWins(false);
+            scoreContext!.setScore(0);
         }
     }, [npcsMove])
 
@@ -121,9 +126,9 @@ const Game = () => {
                 <div className="summary">
                     <div className="user">
                         You picked
-                        <div className='outer-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.05)' : 'none' }}>
-                            <div className='middle-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.1)' : 'none' }}>
-                                <div className='inner-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.15)' : 'none' }}>
+                        <div className='outer-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
+                            <div className='middle-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
+                                <div className='inner-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
                                     <div className="hand" style={{ background: `${usersMove.bg}`, borderBottom: `${usersMove.borderBottom}` }}>
                                         <div className="inner-hand" style={{ backgroundImage: `url(${usersMove.icon})` }}></div>
                                     </div>
@@ -137,9 +142,9 @@ const Game = () => {
                     </div>
                     <div className="npc">
                         the house picked
-                        <div className='outer-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.05)' : 'none' }}>
-                            <div className='middle-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.1)' : 'none' }}>
-                                <div className='inner-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.15)' : 'none' }}>
+                        <div className='outer-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.02)' : 'none' }}>
+                            <div className='middle-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.03)' : 'none' }}>
+                                <div className='inner-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.04)' : 'none' }}>
                                     <div className="hand" style={{ background: `${npcsMove.bg}`, borderBottom: `${npcsMove.borderBottom}` }}>
                                         <div className="inner-hand" style={{ backgroundImage: `url(${npcsMove.icon})` }}></div>
                                     </div>
