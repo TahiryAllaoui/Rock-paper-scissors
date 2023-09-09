@@ -65,6 +65,10 @@ const Game = () => {
     //Summary text (Win, lose, or draw)
     const [text, setText] = useState('');
 
+    //Win or lose
+    const [userWins, setUserWins] = useState(false);
+    const [npcWins, setNpcWins] = useState(false);
+
     const handleClick = (item: moves) => {
         let npcIndex: number = Math.floor(Math.random() * 3);
         setAgain(!again);
@@ -74,24 +78,26 @@ const Game = () => {
 
     const handleLost = () => {
         setAgain(!again);
+        setNpcWins(false);
+        setUserWins(false);
     };
 
     useEffect(() => {
-
-
         if (usersMove.name == npcsMove.name) {
-            console.log('Draw');
             setText('Draw');
+            setNpcWins(false);
+            setUserWins(false);
         }
         else if (usersMove.beat == npcsMove.name) {
-            console.log('You won');
             setText('You won');
+            setNpcWins(false);
+            setUserWins(true);
         }
         if (usersMove.lose == npcsMove.name) {
-            console.log('You lose');
             setText('You lost');
+            setNpcWins(true);
+            setUserWins(false);
         }
-
     }, [npcsMove])
 
 
@@ -113,21 +119,30 @@ const Game = () => {
                 </div>
             </div> :
                 <div className="summary">
-                    <div className='outer-layer'>
-                        <div className='middle-layer'>
-                            <div className='inner-layer'>
-                                <div className="hand" style={{ background: `${usersMove.bg}`, borderBottom: `${usersMove.borderBottom}` }}>
-                                    <div className="inner-hand" style={{ backgroundImage: `url(${usersMove.icon})` }}></div>
+                    <div className="user">
+                        You picked
+                        <div className='outer-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.05)' : 'none' }}>
+                            <div className='middle-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.1)' : 'none' }}>
+                                <div className='inner-layer' style={{ backgroundColor: userWins ? 'rgba(255, 255, 255, 0.15)' : 'none' }}>
+                                    <div className="hand" style={{ background: `${usersMove.bg}`, borderBottom: `${usersMove.borderBottom}` }}>
+                                        <div className="inner-hand" style={{ backgroundImage: `url(${usersMove.icon})` }}></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h1 onClick={handleLost}>{text}</h1>
-                    <div className='outer-layer'>
-                        <div className='middle-layer'>
-                            <div className='inner-layer'>
-                                <div className="hand" style={{ background: `${npcsMove.bg}`, borderBottom: `${npcsMove.borderBottom}` }}>
-                                    <div className="inner-hand" style={{ backgroundImage: `url(${npcsMove.icon})` }}></div>
+                    <div className="container">
+                        <h2>{text}</h2>
+                        <div className="my-button" onClick={handleLost}>PLAY AGAIN</div>
+                    </div>
+                    <div className="npc">
+                        the house picked
+                        <div className='outer-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.05)' : 'none' }}>
+                            <div className='middle-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.1)' : 'none' }}>
+                                <div className='inner-layer' style={{ backgroundColor: npcWins ? 'rgba(255, 255, 255, 0.15)' : 'none' }}>
+                                    <div className="hand" style={{ background: `${npcsMove.bg}`, borderBottom: `${npcsMove.borderBottom}` }}>
+                                        <div className="inner-hand" style={{ backgroundImage: `url(${npcsMove.icon})` }}></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
