@@ -1,7 +1,4 @@
 .game {
-    background-image: url('../assets/images/bg-triangle.svg');
-    background-repeat: no-repeat;
-    background-position: center;
     width: 100%;
     height: 75%;
     margin-top: 2rem;
@@ -11,6 +8,8 @@
     justify-content: center;
 
     .hand-selection {
+        background-repeat: no-repeat;
+        background-position: center;
         width: 50%;
         height: 100%;
         display: flex;
@@ -18,6 +17,8 @@
         align-items: center;
         justify-content: center;
         gap: 3rem;
+        opacity: 1;
+        transition: opacity 200ms;
 
         .top-hand {
             display: flex;
@@ -111,6 +112,8 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        opacity: 0;
+        transition: opacity 200ms;
 
         .user {
             display: flex;
@@ -185,6 +188,8 @@
             font-weight: bold;
 
             .outer-layer {
+                opacity: 1;
+                transition: opacity 100ms ease-out;
                 border-radius: 50%;
                 display: flex;
                 flex-direction: column;

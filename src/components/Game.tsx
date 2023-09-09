@@ -73,17 +73,36 @@ const Game = () => {
     const [npcWins, setNpcWins] = useState(false);
 
     const handleClick = (item: moves) => {
-        let npcIndex: number = Math.floor(Math.random() * 3);
-        setAgain(!again);
-        setUsersMove(item);
-        setNpcsMove(hand[npcIndex]);
+        let game = document.querySelector('.hand-selection') as HTMLElement;
+        game.style.opacity = '0';
+        setTimeout(() => {
+            let npcIndex: number = Math.floor(Math.random() * 3);
+            setAgain(!again);
+            setUsersMove(item);
+            setNpcsMove(hand[npcIndex]);
+        }, 200)
     };
 
     const handleLost = () => {
-        setAgain(!again);
-        setNpcWins(false);
-        setUserWins(false);
+        let summary = document.querySelector('.summary') as HTMLElement;
+        summary.style.opacity = '0';
+        setTimeout(() => {
+            setAgain(!again);
+            setNpcWins(false);
+            setUserWins(false);
+        }, 200)
     };
+
+    useEffect(() => {
+        if (again) {
+            let game = document.querySelector('.hand-selection') as HTMLElement;
+            game.style.opacity = '1';
+        }
+        else {
+            let summary = document.querySelector('.summary') as HTMLElement;
+            summary.style.opacity = '1'
+        }
+    }, [again])
 
     useEffect(() => {
         if (usersMove.name == npcsMove.name) {
@@ -97,7 +116,7 @@ const Game = () => {
             setUserWins(true);
             scoreContext!.setScore(scoreContext.score + 1);
         }
-        if (usersMove.lose == npcsMove.name) {
+        else if (usersMove.lose == npcsMove.name) {
             setText('You lost');
             setNpcWins(true);
             setUserWins(false);
@@ -107,8 +126,8 @@ const Game = () => {
 
 
     return (
-        <div className="game" style={{ backgroundImage: again ? `url(${triangle})` : 'none' }}>
-            {again ? <div className="hand-selection">
+        <div className="game" >
+            {again ? <div className="hand-selection" style={{ backgroundImage: again ? `url(${triangle})` : 'none' }}>
                 <div className="top-hand">
                     <div className="paper" onClick={() => handleClick(hand[1])}>
                         <div className="inner-paper"></div>

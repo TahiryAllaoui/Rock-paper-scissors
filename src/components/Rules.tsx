@@ -6,10 +6,20 @@ const Rules = () => {
         container.style.display = 'flex';
         container.style.alignItems = 'center';
         container.style.justifyContent = 'center';
+        container.style.opacity = '0';
+        container.style.zIndex = '1';
+
+        setTimeout(() => {
+            container.style.opacity = '1'
+        }, 100);
     };
     const handleClose = () => {
         let container = document.querySelector('.rules .container') as HTMLElement;
-        container.style.display = 'none';
+        container.style.opacity = '1';
+        setTimeout(() => {
+            container.style.opacity = '0';
+            container.style.zIndex = '-2';
+        }, 50);
     };
 
 
